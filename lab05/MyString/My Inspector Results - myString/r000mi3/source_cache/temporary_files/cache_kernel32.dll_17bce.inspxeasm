@@ -1,0 +1,19 @@
+97216	BaseThreadInitThunk:
+97216	sub rsp, 0x28
+97220	test ecx, ecx
+97222	jnz 0x17bdd
+97224	mov rcx, r8
+97227	mov rax, rdx
+97230	call qword ptr [rip+0x61f9c]
+97236	mov ecx, eax
+97238	call qword ptr [rip+0x61724]
+97244	int3 
+97245	call qword ptr [rip+0x6193d]
+97251	test al, 0x10
+97253	jz 0x17bf0
+97255	call 0x17c00
+97260	test eax, eax
+97262	js 0x17bf2
+97264	xor eax, eax
+97266	add rsp, 0x28
+97270	ret 

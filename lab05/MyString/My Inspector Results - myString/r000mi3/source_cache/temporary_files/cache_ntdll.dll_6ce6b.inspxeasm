@@ -1,0 +1,23 @@
+446032	RtlUserThreadStart:
+446032	sub rsp, 0x78
+446036	mov r9, rcx
+446039	mov rax, qword ptr [rip+0xf8092]
+446046	test rax, rax
+446049	jz 0x6ce73
+446051	mov r8, rdx
+446054	mov rdx, rcx
+446057	xor ecx, ecx
+446059	call qword ptr [rip+0x11118f]
+446065	jmp 0x6ce93
+446067	mov rcx, rdx
+446070	mov rax, r9
+446073	call qword ptr [rip+0x111181]
+446079	mov ecx, eax
+446081	call 0x6cea0 <RtlExitUserThread>
+446086	nop 
+446087	mov edx, eax
+446089	or rcx, 0xffffffffffffffff
+446093	call 0x9c5d0 <NtTerminateProcess>
+446098	nop 
+446099	add rsp, 0x78
+446103	ret 

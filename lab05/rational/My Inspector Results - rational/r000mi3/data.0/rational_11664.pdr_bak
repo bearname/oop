@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<diags major="2" minor="0">
+
+<diag id="1">
+	<type>233</type>
+	<message>
+		<timestamp>806880270</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>2256</threadid>
+			<stackstamp>806913250</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>c:\windows\system32\ntdll.dll</mod>
+			<rva>0x25031</rva>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="2">
+	<type>233</type>
+	<message>
+		<timestamp>5558063358</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>5140</threadid>
+			<stackstamp>5558084106</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>c:\windows\system32\ntdll.dll</mod>
+			<rva>0x33cf0</rva>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="3">
+	<type>233</type>
+	<message>
+		<timestamp>5793217378</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>5368</threadid>
+			<stackstamp>5793225994</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>c:\windows\system32\ntdll.dll</mod>
+			<rva>0x33cf0</rva>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="4">
+	<type>231</type>
+	<message>
+		<timestamp>8537388274</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>5140</threadid>
+			<stackstamp>8537399484</stackstamp>
+		</thread>
+	</message>
+</diag>
+
+<diag id="5">
+	<type>231</type>
+	<message>
+		<timestamp>8537561912</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>5368</threadid>
+			<stackstamp>8537569968</stackstamp>
+		</thread>
+	</message>
+</diag>
+
+<diag id="6">
+	<type>231</type>
+	<message>
+		<timestamp>8961649884</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>2256</threadid>
+			<stackstamp>8961658434</stackstamp>
+		</thread>
+	</message>
+</diag>
+
+<diag id="7">
+	<type>1012</type>
+	<message>
+		<timestamp>8966102516</timestamp>
+		<mess_blocks>1</mess_blocks>
+		<defined>
+			<thrname></thrname>
+			<size>92</size>
+			<threadid>2256</threadid>
+			<stackstamp>7281231958</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe</mod>
+			<rva>0x1095</rva>
+			</loc>
+			<loc>
+			<mod>c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe</mod>
+			<rva>0x1183</rva>
+			</loc>
+			<loc>
+			<mod>c:\windows\system32\kernel32.dll</mod>
+			<rva>0x17bce</rva>
+			</loc>
+			<loc>
+			<mod>c:\windows\system32\ntdll.dll</mod>
+			<rva>0x6ce6b</rva>
+			</loc>
+			</stacktrace>
+		</defined>
+	</message>
+</diag>
+</diags>

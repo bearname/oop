@@ -1,0 +1,19 @@
+
+=== Start: [2019/08/23 17:10:21] === 
+Analysis started...
+Result file: C:\Users\mikha\Desktop\New folder\oop\my\oop\lab05\rational\My Inspector Results - rational\r000mi3\r000mi3.inspxe 
+Analysis started for c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe (pid = 11664) 
+Loaded module: c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe, address range [0x7ff6831f0000-0x7ff6831f6fff] 
+Loaded module: c:\windows\system32\kernelbase.dll, address range [0x7fff8f420000-0x7fff8f6c2fff] 
+Loaded module: c:\windows\system32\kernel32.dll, address range [0x7fff91260000-0x7fff91311fff] 
+Loaded module: c:\windows\system32\ntdll.dll, address range [0x7fff91620000-0x7fff9180ffff] 
+Process c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe exited with code 0. Leak analysis starting. Please wait... 
+Unloaded module: C:\Users\mikha\Desktop\New folder\oop\my\oop\lab05\x64\Release\rational.exe 
+Unloaded module: C:\Windows\System32\KERNELBASE.dll 
+Unloaded module: C:\Windows\System32\KERNEL32.DLL 
+Unloaded module: C:\Windows\SYSTEM32\ntdll.dll 
+Completed analysis for c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\rational.exe 
+Application exit code: 0 
+Result file: C:\Users\mikha\Desktop\New folder\oop\my\oop\lab05\rational\My Inspector Results - rational\r000mi3\r000mi3.inspxe 
+Analysis completed
+=== End: [2019/08/23 17:10:29] === 

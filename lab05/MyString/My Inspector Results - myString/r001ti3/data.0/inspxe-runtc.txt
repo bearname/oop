@@ -1,0 +1,18 @@
+
+=== Start: [2019/08/23 17:14:28] === 
+Analysis started...
+Result file: C:\Users\mikha\Desktop\New folder\oop\my\oop\lab05\MyString\My Inspector Results - myString\r001ti3\r001ti3.inspxe 
+Found target process c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\mystring.exe (PID = 6352). Analysis started... 
+Loaded module: c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\mystring.exe. 
+Loaded module: c:\windows\system32\kernelbase.dll. 
+Loaded module: c:\windows\system32\kernel32.dll. 
+Loaded module: c:\windows\system32\ntdll.dll. 
+Unloaded module: c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\mystring.exe. 
+Unloaded module: c:\windows\system32\kernelbase.dll. 
+Unloaded module: c:\windows\system32\kernel32.dll. 
+Unloaded module: c:\windows\system32\ntdll.dll. 
+Process c:\users\mikha\desktop\new folder\oop\my\oop\lab05\x64\release\mystring.exe (PID = 6352) has terminated. 
+Application exit code: 0 
+Result file: C:\Users\mikha\Desktop\New folder\oop\my\oop\lab05\MyString\My Inspector Results - myString\r001ti3\r001ti3.inspxe 
+Analysis completed
+=== End: [2019/08/23 17:14:32] === 

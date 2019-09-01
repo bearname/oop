@@ -1,10 +1,10 @@
 #pragma once
 
+#include "CMyArrayIterator.h"
 #include <algorithm>
 #include <exception>
 #include <memory>
 #include <new>
-#include "CMyArrayIterator.h"
 
 template <typename T>
 class CMyArray
@@ -42,7 +42,7 @@ public:
 
 	using MyReverseIterator = std::reverse_iterator<MyIterator>;
 	using MyConstReverseIterator = std::reverse_iterator<MyConstIterator>;
-	
+
 	MyReverseIterator RBegin();
 	MyReverseIterator REnd();
 	MyConstReverseIterator CRBegin() const;
@@ -136,7 +136,7 @@ private:
 	T* m_end = nullptr;
 	T* m_endOfCapacity = nullptr;
 };
- 
+
 template <typename T>
 CMyArray<T>::CMyArray()
 	: CMyArray(0)
@@ -183,6 +183,7 @@ CMyArray<T>& CMyArray<T>::operator=(CMyArray<T>&& other)
 {
 	if (this != std::addressof(other))
 	{
+		tmp
 		std::swap(m_begin, tmp.m_begin);
 		std::swap(m_end, tmp.m_end);
 		std::swap(m_endOfCapacity, tmp.m_endOfCapacity);
@@ -204,7 +205,6 @@ CMyArray<T>& CMyArray<T>::operator=(CMyArray<T> const& other)
 		}
 		std::swap(m_begin, tmp.m_begin);
 		std::swap(m_end, tmp.m_end);
-
 	}
 
 	return *this;
@@ -225,19 +225,12 @@ const T* CMyArray<T>::Data() const
 template <typename T>
 void CMyArray<T>::Resize(size_t size)
 {
-	if (size < GetSize())
+	if (size > GetCapacity())
 	{
-		auto tmpEnd = m_end;
-		m_end = m_begin + size;
-		DestroyItems(m_end, tmpEnd);
+		ResizeCapacity(size);
 	}
-	else
+	if (size >= GetSize())
 	{
-		if (size > GetCapacity())
-		{
-			ResizeCapacity(size);
-		}
-
 		auto prevEnd = m_end;
 		m_end = m_begin + size;
 
@@ -245,6 +238,12 @@ void CMyArray<T>::Resize(size_t size)
 		{
 			NewItem(current, T());
 		}
+	}
+	else
+	{
+		auto tmpEnd = m_end;
+		m_end = m_begin + size;
+		DestroyItems(m_end, tmpEnd);
 	}
 }
 
@@ -258,31 +257,19 @@ void CMyArray<T>::Clear()
 template <typename T>
 void CMyArray<T>::ResizeCapacity(size_t capacity)
 {
-	if (capacity == 0)
+	auto newBegin = RawAlloc(capacity);
+	T* newEnd = newBegin;
+	try
 	{
-		DeleteItems(m_begin, m_end);
-		SwitchToNewStorageBlock(nullptr, nullptr, nullptr);
+		CopyItems(m_begin, m_end, newBegin, newEnd);
 	}
-	else
+	catch (...)
 	{
-		auto newBegin = RawAlloc(capacity);
-		T* newEnd = newBegin;
-
-		if (GetSize() != 0)
-		{
-			try
-			{
-				CopyItems(m_begin, m_end, newBegin, newEnd);
-			}
-			catch (...)
-			{
-				DeleteItems(newBegin, newEnd);
-				throw;
-			}
-		}
-
-		SwitchToNewStorageBlock(newBegin, newEnd, newEnd + capacity);
+		DeleteItems(newBegin, newEnd);
+		throw;
 	}
+
+	SwitchToNewStorageBlock(newBegin, newEnd, newEnd + capacity);
 }
 
 template <typename T>

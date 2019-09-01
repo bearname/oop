@@ -1,0 +1,50 @@
+4164	pre_c_initialization:
+4164	push rbx
+4166	sub rsp, 0x20
+4170	mov ecx, 0x1
+4175	call 0x1c12 <_set_app_type>
+4180	call 0x179c <_get_startup_file_mode>
+4185	mov ecx, eax
+4187	call 0x1c48 <_set_fmode>
+4192	call 0x1c78 <__p__commode>
+4197	mov rbx, rax
+4200	call 0x1000 <main>
+4205	mov ecx, 0x1
+4210	mov dword ptr [rbx], eax
+4212	call 0x14bc <__scrt_initialize_onexit_tables>
+4217	test al, al
+4219	jz 0x10f0
+4221	call 0x19fc <_RTC_Initialize>
+4226	lea rcx, ptr [rip+0x9af] <_RTC_Terminate>
+4233	call 0x16d0 <atexit>
+4238	call 0x1794 <_get_startup_argv_mode>
+4243	mov ecx, eax
+4245	call 0x1c1e <_configure_narrow_argv>
+4250	test eax, eax
+4252	jnz 0x10f0
+4254	call 0x17a4 <?__scrt_initialize_type_info@@YAXXZ>
+4259	call 0x17e8 <__scrt_is_user_matherr_present>
+4264	test eax, eax
+4266	jz 0x10b8
+4268	lea rcx, ptr [rip-0xb3] <main>
+4275	call 0x1c18 <__setusermatherr>
+4280	call 0x17b8 <_guard_check_icall_nop>
+4285	call 0x17b8 <_guard_check_icall_nop>
+4290	call 0x1000 <main>
+4295	mov ecx, eax
+4297	call 0x1c6c <_configthreadlocale>
+4302	call 0x17b4 <_should_initialize_environment>
+4307	test al, al
+4309	jz 0x10dc
+4311	call 0x1c24 <_initialize_narrow_environment>
+4316	call 0x1000 <main>
+4321	call 0x1958 <__scrt_initialize_mta>
+4326	test eax, eax
+4328	jnz 0x10f0
+4330	add rsp, 0x20
+4334	pop rbx
+4335	ret 
+4336	mov ecx, 0x7
+4341	call 0x180c <__scrt_fastfail>
+4346	int3 
+4347	int3 

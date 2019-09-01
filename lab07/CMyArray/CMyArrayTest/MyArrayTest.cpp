@@ -80,7 +80,7 @@ SCENARIO("CMyArray")
 					}
 				}
 
-				WHEN("new size > CMyArrai size")
+				WHEN("new size > CMyArray size")
 				{
 					CMyArray<double> arr;
 
@@ -94,6 +94,21 @@ SCENARIO("CMyArray")
 						{
 							REQUIRE(IsEqual(arr, CMyArray<double>(4)));
 						}
+					}
+				}	
+				WHEN("new size < CMyArray size")
+				{
+					CMyArray<double> arr;
+					for (double i = 0; i < 10; ++i)
+					{
+						arr.Append(i);
+					}
+
+					arr.Resize(4);
+
+					THEN("new CMyArray size is equal new size and new capacity is equal a new size")
+					{
+						VerifyArraySizeAndCapacity(arr, 16, 4);
 					}
 				}
 			}

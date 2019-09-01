@@ -1,0 +1,103 @@
+4512	__scrt_common_main_seh:
+4512	mov qword ptr [rsp+0x8], rbx
+4517	mov qword ptr [rsp+0x10], rsi
+4522	push rdi
+4523	sub rsp, 0x30
+4527	mov ecx, 0x1
+4532	call 0x136c <__scrt_initialize_crt>
+4537	test al, al
+4539	jz 0x12f7
+4545	xor sil, sil
+4548	mov byte ptr [rsp+0x20], sil
+4553	call 0x1330 <__scrt_acquire_startup_lock>
+4558	mov bl, al
+4560	mov ecx, dword ptr [rip+0x1e7a]
+4566	cmp ecx, 0x1
+4569	jz 0x1302
+4575	test ecx, ecx
+4577	jnz 0x122d
+4579	mov dword ptr [rip+0x1e63], 0x1
+4589	lea rdx, ptr [rip+0xfe4]
+4596	lea rcx, ptr [rip+0xfc5]
+4603	call 0x1cc2 <_initterm_e>
+4608	test eax, eax
+4610	jz 0x120e
+4612	mov eax, 0xff
+4617	jmp 0x12e7
+4622	lea rdx, ptr [rip+0xfa3]
+4629	lea rcx, ptr [rip+0xf84]
+4636	call 0x1cbc <_initterm>
+4641	mov dword ptr [rip+0x1e25], 0x2
+4651	jmp 0x1235
+4653	mov sil, 0x1
+4656	mov byte ptr [rsp+0x20], sil
+4661	mov cl, bl
+4663	call 0x152c <__scrt_release_startup_lock>
+4668	call 0x1874 <__scrt_get_dyn_tls_init_callback>
+4673	mov rbx, rax
+4676	cmp qword ptr [rax], 0x0
+4680	jz 0x1268
+4682	mov rcx, rax
+4685	call 0x1490 <__scrt_is_nonwritable_in_current_image>
+4690	test al, al
+4692	jz 0x1268
+4694	xor r8d, r8d
+4697	lea edx, ptr [r8+0x2]
+4701	xor ecx, ecx
+4703	mov rax, qword ptr [rbx]
+4706	call qword ptr [rip+0xf30]
+4712	call 0x187c <__scrt_get_dyn_tls_dtor_callback>
+4717	mov rbx, rax
+4720	cmp qword ptr [rax], 0x0
+4724	jz 0x128a
+4726	mov rcx, rax
+4729	call 0x1490 <__scrt_is_nonwritable_in_current_image>
+4734	test al, al
+4736	jz 0x128a
+4738	mov rcx, qword ptr [rbx]
+4741	call 0x1cf2 <_register_thread_local_exe_atexit_callback>
+4746	call 0x1ce0 <__p___argv>
+4751	mov rdi, qword ptr [rax]
+4754	call 0x1cda <__p___argc>
+4759	mov rbx, rax
+4762	call 0x1cb6 <_get_initial_narrow_environment>
+4767	mov r8, rax
+4770	mov rdx, rdi
+4773	mov ecx, dword ptr [rbx]
+4775	call 0x1010 <main>
+4780	mov ebx, eax
+4782	call 0x19e0 <__scrt_is_managed_app>
+4787	test al, al
+4789	jz 0x130c
+4791	test sil, sil
+4794	jnz 0x12c1
+4796	call 0x1ce6 <_cexit>
+4801	xor edx, edx
+4803	mov cl, 0x1
+4805	call 0x1550 <__scrt_uninitialize_crt>
+4810	mov eax, ebx
+4812	jmp 0x12e7
+4814	mov ebx, eax
+4816	call 0x19e0 <__scrt_is_managed_app>
+4821	test al, al
+4823	jz 0x1314
+4825	cmp byte ptr [rsp+0x20], 0x0
+4830	jnz 0x12e5
+4832	call 0x1cec <_c_exit>
+4837	mov eax, ebx
+4839	mov rbx, qword ptr [rsp+0x40]
+4844	mov rsi, qword ptr [rsp+0x48]
+4849	add rsp, 0x30
+4853	pop rdi
+4854	ret 
+4855	mov ecx, 0x7
+4860	call 0x188c <__scrt_fastfail>
+4865	nop 
+4866	mov ecx, 0x7
+4871	call 0x188c <__scrt_fastfail>
+4876	mov ecx, ebx
+4878	call 0x1cc8 <exit>
+4883	nop 
+4884	mov ecx, ebx
+4886	call 0x1cce <_exit>
+4891	nop 

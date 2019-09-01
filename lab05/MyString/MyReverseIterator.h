@@ -137,7 +137,7 @@ private:
 template<typename ValueType>
 inline CMyReverseIterator<ValueType>& operator+(std::ptrdiff_t& offset, const CMyReverseIterator<ValueType>& rhs)
 {
-	CMyIterator<ValueType> tmp = rhs;
+	CMyReverseIterator<ValueType> tmp = rhs;
 
 	return tmp + offset;
 }
